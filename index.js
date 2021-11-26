@@ -45,6 +45,7 @@ app.get("/Adebowale-Adetunji", async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
+      args: ['--no-sandbox'],
       headless: true,
     });
 
