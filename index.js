@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const puppeteer = require("puppeteer");
 const app = express();
 const morgan = require("morgan");
-const handleMail = require("../server/controllers/handleMail");
+const handleMail = require("./controllers/handleMail");
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
