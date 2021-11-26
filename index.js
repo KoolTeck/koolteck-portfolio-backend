@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const puppeteer = require("puppeteer");
 const app = express();
+const morgan = require("morgan");
 const handleMail = require("../server/controllers/handleMail");
 
 app.use((req, res, next) => {
@@ -13,7 +14,7 @@ app.use((req, res, next) => {
   );
   next();
 });
-
+app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
